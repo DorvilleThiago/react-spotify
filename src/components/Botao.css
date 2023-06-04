@@ -1,0 +1,6 @@
+.Botao {
+    background: linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0.51) 100%);
+    border-radius: 10px;
+    width: 250px;
+    height: 40px;
+}
