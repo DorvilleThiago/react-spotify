@@ -9,14 +9,19 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background: rgb(72,0,190);
-  background: linear-gradient(0deg, rgba(72,0,190,1) 0%, rgba(0,0,0,1) 100%);
+  background-image: url("./src/assets/bg4.jpg");
+  background-repeat: repeat;
+  background-size: 800px 600px;
+  background-color: rgba(41, 24, 60, 0.726);
+  background-blend-mode: darken;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  
 }
 
 a {
