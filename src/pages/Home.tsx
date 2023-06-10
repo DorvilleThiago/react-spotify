@@ -10,6 +10,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import transformList from '../services/transformList';
 import Spotext from '../Spotext';
 import { getSongs } from '../services/getSongs';
+import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
 
@@ -19,10 +20,17 @@ export default function Home() {
     const close = () => setModal(false)
     const open = () => songInput === '' ? setModal(false) : setModal(true)
 
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState('')
     const [userLoad, setUserLoad] = useState(false)
 
     const { songInput } = useContext(Spotext)
+
+    function navigateToSong(song:string) {
+        let string = `/spotify/${song}`
+        navigate(string)
+    }
 
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -39,8 +47,6 @@ export default function Home() {
             }
         }
       }
-      
-      
     
     useEffect(() => {
         const getUser = async() => {
@@ -55,6 +61,7 @@ export default function Home() {
     }, [])
 
     interface song {
+        track_id: string;
         image: image;
         name: string;
         artists: string[];
@@ -72,7 +79,7 @@ export default function Home() {
                     onSubmit={handleSubmit}
                     className="flex flex-col items-start min-[500px]:items-center justify-center gap-12">
                     {userLoad ?
-                        (<h1 className="min-[900px]:text-[50px] leading-[61px] font-bold text-[42px] max-[500px]:w-[290px] min-[500px]:text-center">O que você quer ouvir hoje, {username}?</h1>)
+                        (<h1 className="min-[900px]:text-[50px] leading-[61px] font-bold text-[42px] max-[500px]:w-[290px] min-[500px]:text-center">{username.charAt(0).toUpperCase() + username.slice(1)}, O que você quer ouvir hoje?</h1>)
                         :
                         (<div>
                             <Skeleton count={1} className='h-12 w-[70vw]' />
@@ -90,7 +97,10 @@ export default function Home() {
                         {loaded ? (
                         <ul className='flex flex-col gap-3 p-2'>
                             {songs.map((song, index) => (
-                                <li key={index} className='flex gap-4 hover:bg-neutral-800 hover:cursor-pointer rounded-[10px]'>
+                                <li
+                                    onClick={() => navigateToSong(song.track_id)}
+                                    key={index}
+                                    className='flex gap-4 hover:bg-neutral-800 hover:cursor-pointer rounded-[10px]'>
                                     <img
                                         className='h-20 w-20'
                                         src={song.image.url} />

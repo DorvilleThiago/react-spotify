@@ -54,7 +54,7 @@ export default function Login() {
                 <Botao
                     className="mt-6"
                     text="Fazer Login" />
-                <Link to='/register' className="text-center text-[12px] mt-1 opacity-75">
+                <Link to='/register' className="text-center text-[12px] mt-1">
                     Ou clique aqui para se registrar</Link>
             </form>
             

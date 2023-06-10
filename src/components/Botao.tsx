@@ -13,7 +13,7 @@ export default function Botao(props: BotaoProps) {
             onClick={props.onClick}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale:0.95 }}
-            className={`Botao font-bold text-white hover:shadow-white hover:shadow-sm transition-all ${props.className}`}>
+            className={`Botao font-bold text-white hover:text-secundary hover:shadow-secundary hover:shadow-sm transition-all ${props.className}`}>
             {props.text}
         </motion.button>
     )
