@@ -3,7 +3,7 @@ import Botao from "../components/Botao";
 import Logo from "../components/Logo";
 import MyInput from "../components/MyInput";
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import validateCredentials from '../services/validateCredentials';
 import { registerUser } from '../services/registerUser';
 import { toast } from 'react-toastify';
