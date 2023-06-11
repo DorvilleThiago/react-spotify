@@ -18,10 +18,10 @@ function App() {
     <Spotext.Provider value={{songInput, setSongInput}}>
       <Router>
         <Routes>
-          <Route path="/react-spotify" element={<RequireAuth><Home /></RequireAuth>} />
-          <Route path="/react-spotify/spotify/:song" element={<RequireAuth><Player/></RequireAuth>} />
-          <Route path="/react-spotify/login" element={<ReverseAuth><Login/></ReverseAuth>} />
-          <Route path="/react-spotify/register" element={<ReverseAuth><Register/></ReverseAuth>} />
+          <Route path="/" element={<RequireAuth><Home /></RequireAuth>} />
+          <Route path="/spotify/:song" element={<RequireAuth><Player/></RequireAuth>} />
+          <Route path="/login" element={<ReverseAuth><Login/></ReverseAuth>} />
+          <Route path="/register" element={<ReverseAuth><Register/></ReverseAuth>} />
         </Routes>
       </Router>
       <ToastContainer />
