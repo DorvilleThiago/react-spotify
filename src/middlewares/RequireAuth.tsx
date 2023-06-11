@@ -11,7 +11,7 @@ export const RequireAuth = ({ children }: any) => {
 
   useEffect(() => {
    const log = async() => {
-      const resposta = await fetch('http://127.0.0.1:5000/token', {
+      const resposta = await fetch('http://52.255.138.132/token', {
         method: 'GET',
          headers: {
            'Content-Type': 'application/json',

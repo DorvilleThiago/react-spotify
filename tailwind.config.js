@@ -9,7 +9,8 @@ export default {
       colors: {
         primary: '#4800BE',
         lighter: '#5200D7',
-        secundary: '#FCAF3C'
+        secundary: '#FCAF3C',
+        black_transparent: '#00000099'
       },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],

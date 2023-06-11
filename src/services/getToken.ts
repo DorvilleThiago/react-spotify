@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function getToken(email: string, password: string) {
     try {
-        const response = await axios.post('http://127.0.0.1:5000/login', {
+        const response = await axios.post('http://52.255.138.132/login', {
           email,
           password
         });

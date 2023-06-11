@@ -62,14 +62,9 @@ export default function Home() {
 
     interface song {
         track_id: string;
-        image: image;
+        image: string;
         name: string;
         artists: string[];
-    }
-    interface image {
-        url: string
-        width: number
-        height: number
     }
     
     return (
@@ -103,7 +98,7 @@ export default function Home() {
                                     className='flex gap-4 hover:bg-neutral-800 hover:cursor-pointer rounded-[10px]'>
                                     <img
                                         className='h-20 w-20'
-                                        src={song.image.url} />
+                                        src={song.image} />
                                     <div className='flex flex-col'>
                                         <h1 className='text-[25px] font-bold leading-7 max-[500px]:text-[18px]'>{song.name}</h1>
                                         <p className='max-[500px]:text-[13px]'>{transformList(song.artists)}</p>
