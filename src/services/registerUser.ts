@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export async function registerUser(username: string, password: string, email: string) {
     try {
-        const response = await axios.post('http://52.255.138.132/register', {
+        const response = await axios.post('https://api.thiago-dorville.tech/register', {
             username,
             email,
             password

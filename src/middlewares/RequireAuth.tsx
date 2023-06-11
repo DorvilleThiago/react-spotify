@@ -11,7 +11,7 @@ export const RequireAuth = ({ children }: any) => {
 
   useEffect(() => {
    const log = async() => {
-      const resposta = await fetch('http://52.255.138.132/token', {
+      const resposta = await fetch('https://api.thiago-dorville.tech/token', {
         method: 'GET',
          headers: {
            'Content-Type': 'application/json',
