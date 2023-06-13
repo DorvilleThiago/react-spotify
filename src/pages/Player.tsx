@@ -14,6 +14,7 @@ import Pause from '../assets/Pause.svg'
 import Volume from '../assets/Volume.svg'
 import { useNavigate } from 'react-router-dom';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import { getSongAudio } from '../services/getSongAudio';
 
 export default function Player() {
 
@@ -105,11 +106,15 @@ export default function Player() {
             if (song_data_list) { 
                 const song_data = song_data_list[0]
                 console.log(song_data)
+                const song_audio = await getSongAudio(song_data.url)
+                console.log(song_audio)
                 setImage(song_data.image)
                 setTitle(song_data.title)
                 const transformed_artists = transformList(song_data.artists)
                 setArt(transformed_artists)
-                setAudio(song_data.audio_preview)
+                if (song_audio) {
+                    setAudio(URL.createObjectURL(song_audio))
+                }
             }
         }
         run()
